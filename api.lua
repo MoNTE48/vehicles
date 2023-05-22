@@ -205,6 +205,7 @@ function vehicles.object_drive(entity, dtime, def)
 		local ctrl = entity.driver:get_player_control()
 		local dir = entity.driver:get_look_dir()
 		local yaw = entity.driver:get_look_horizontal()
+		if not yaw then return end
 
 		--dummy variables
 		local vec_rise = {}
