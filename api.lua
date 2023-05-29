@@ -69,6 +69,7 @@ function vehicles.object_detach(entity, player, offset)
 	player:set_properties({visual_size = {x=1, y=1}})
 	player:set_eye_offset({x=0, y=0, z=0}, {x=0, y=0, z=0})
 	local pos = player:get_pos()
+	if not pos then return end
 	pos = {x = pos.x + offset.x, y = pos.y + 0.2 + offset.y, z = pos.z + offset.z}
 	minetest.after(0.1, function()
 		player:set_pos(pos)
